@@ -29,8 +29,8 @@ export default function SearchGiphyPage() {
   };
 
   return (
-    <div className="container mx-auto py-8">
-      <h1 className="text-2xl font-bold mb-4">Search Your Giphy</h1>
+    <div className="container mx-auto py-4">
+      <h1 className="text-2xl font-bold mb-2">Search Your Giphy</h1>
       <form onSubmit={handleSearch} className="mb-4 flex">
         <input
           type="text"
@@ -49,8 +49,8 @@ export default function SearchGiphyPage() {
       <div className="grid grid-cols-3 gap-4">
         {/* Display up to 9 Gifs */}
         {gifs.map((gif) => (
-            <div className='flex justify-center items-center'>
-          <img key={gif.id} src={gif.images.fixed_height.url} alt={gif.title} className="" />
+            <div className='flex justify-center items-center '>
+          <img key={gif.id} src={gif.images.fixed_height.url} alt={gif.title} className="h-[25vh]" />
             </div>
         ))}
       </div>
