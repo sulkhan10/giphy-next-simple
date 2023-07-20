@@ -1,4 +1,5 @@
 'use client'
+import Link from "next/link";
 
 import { useState } from 'react';
 
@@ -30,8 +31,29 @@ export default function SearchGiphyPage() {
 
   return (
     <div className="container mx-auto py-4">
-      <h1 className="text-2xl font-bold mb-2">Search Your Giphy</h1>
-      <form onSubmit={handleSearch} className="mb-4 flex">
+              <div className="flex justify-between items-center mb-4">
+
+        <div className="flex items-center ">
+          <Link href="/">
+            <svg
+              className="w-6 mr-8"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M11.25 9l-3 3m0 0l3 3m-3-3h7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+          </Link>
+          <h1 className="text-2xl font-bold ">Search Your Giphy</h1>
+        </div>
+      <form onSubmit={handleSearch} className=" flex">
         <input
           type="text"
           placeholder="Enter your search query"
@@ -46,6 +68,7 @@ export default function SearchGiphyPage() {
           Search
         </button>
       </form>
+        </div>
       <div className="grid grid-cols-3 gap-4">
         {/* Display up to 9 Gifs */}
         {gifs.map((gif) => (
